@@ -1,49 +1,51 @@
-import Link from 'next/link';
-
+"use client";
+import Link from "next/link";
+import Image from "next/image";
 const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="logo">
         <Link href="/">
-          <a>
-            <img src="/public/FMC2E.JPG" alt="Logo" />
-          </a>
+          <span>
+            <Image src="/FMC2E.jpg" alt="Logo" width={40} height={40} />
+          </span>
         </Link>
       </div>
       <ul className="nav-links">
         <li>
           <Link href="/">
-            <a>Dashboard</a>
+            <span>Dashboard</span>
           </Link>
         </li>
         <li>
           <Link href="/about">
-            <a>Projects</a>
+            <span>Projects</span>
           </Link>
         </li>
         <li>
           <Link href="/services">
-            <a>Commands</a>
+            <span>Commands</span>
+          </Link>
+          x
+        </li>
+        <li>
+          <Link href="/contact">
+            <span>Sprints</span>
           </Link>
         </li>
         <li>
           <Link href="/contact">
-            <a>Sprints</a>
+            <span>Mapping</span>
           </Link>
         </li>
         <li>
           <Link href="/contact">
-            <a>Mapping</a>
+            <span>Operators</span>
           </Link>
         </li>
         <li>
           <Link href="/contact">
-            <a>Operators</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/contact">
-            <a>Expertise</a>
+            <span>Expertise</span>
           </Link>
         </li>
       </ul>
