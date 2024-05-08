@@ -1,110 +1,52 @@
 import React from "react";
 
-interface NavbarProps {
-  // youssef you can define props here if needed
-}
+// Settings Icon
+const SettingsIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
+    <path d="M17.414 9H19a1 1 0 011 1v1a1 1 0 01-1 1h-1.586l-.707.707A1 1 0 0115 13V12.586l-.707.707a1 1 0 01-1.414 0L12 12.586V13a1 1 0 01-1 1h-1a1 1 0 01-1-1v-.414l-.707.707a1 1 0 01-1.414 0L5 12.586V13a1 1 0 01-1 1H2.586A2.486 2.486 0 012 12V11c0-.365.097-.706.268-1H2a1 1 0 01-1-1V9a1 1 0 011-1h.268A2.486 2.486 0 012 7V6c0-.365.097-.706.268-1H2a1 1 0 011-1h1.414l.707-.707A1 1 0 016 3h1v.414l.707-.707a1 1 0 011.414 0L10 3.414V3a1 1 0 011-1h1a1 1 0 011 1v.414l.707-.707a1 1 0 011.414 0L15 3.414V3a1 1 0 011 1h1.414A2.486 2.486 0 0118 6v1c0 .365-.097.706-.268 1H19a1 1 0 011 1v1a1 1 0 01-1 1h-.268c.171.294.268.635.268 1v1a2.486 2.486 0 01-.268 1H17a1 1 0 01-1 1h-1v-.414l-.707.707a1 1 0 01-1.414 0L12 17.414V17a1 1 0 01-1-1h-1a1 1 0 01-1 1v.414l-.707-.707a1 1 0 01-1.414 0L5 16.586V17a1 1 0 01-1 1H2.586A2.486 2.486 0 012 16v-1c0-.365.097-.706.268-1H2a1 1 0 01-1-1V11a1 1 0 011-1h.268A2.486 2.486 0 012 10V9c0-.365.097-.706.268-1H2a1 1 0 01-1-1V7a1 1 0 011-1h.268A2.486 2.486 0 012 6V5a2.486 2.486 0 01.268-1H3a1 1 0 011-1V2.586A2.486 2.486 0 016 2h1c.365 0 .706.097 1 .268V2a1 1 0 011-1h1a1 1 0 011 1v.268c.294-.171.635-.268 1-.268h1a2.486 2.486 0 011 1V3a1 1 0 011 1h1.414A2.486 2.486 0 0118 5v1c0 .365-.097.706-.268 1H19a1 1 0 011 1v1z" />
+  </svg>
+);
 
-const Navbar: React.FC<NavbarProps> = () => {
+// Notifications Icon
+const NotificationsIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6">
+    <path d="M10 2a6 6 0 00-6 6v3.586l-.293.293A1 1 0 003 13v1a1 1 0 001 1h12a1 1 0 001-1v-1a1 1 0 00-.293-.707L16 11.586V8a6 6 0 00-6-6zM8 18a2 2 0 004 0H8z" />
+  </svg>
+);
+
+// Navbar Component
+const Navbar: React.FC = () => {
   return (
     <nav className="bg-black border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4 ">
-        <a className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8"
-            alt="Flowbite Logo"
-          />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-            FMC2E
-          </span>
+      <div className="max-w-screen-2xl flex items-center justify-between mx-auto p-4 ">
+        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="public/images/FMC2E.svg" alt="FMC2E LOGO" />
         </a>
-        <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-default"
-          aria-expanded="false"
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
-          </svg>
-        </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 text-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 hover:text-orange-500 focus:text-orange-500 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:p-0 dark:text-white md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:outline-none">
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 hover:text-orange-500 focus:text-orange-500 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:p-0 dark:text-white md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:outline-none">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 hover:text-orange-500 focus:text-orange-500 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:p-0 dark:text-white md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:outline-none">
-                Commands
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 hover:text-orange-500 focus:text-orange-500 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:p-0 dark:text-white md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:outline-none">
-                Sprints
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 hover:text-orange-500 focus:text-orange-500 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:p-0 dark:text-white md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:outline-none">
-                Mapping
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 hover:text-orange-500 focus:text-orange-500 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:p-0 dark:text-white md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:outline-none">
-                Operators
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded hover:bg-gray-100 hover:text-orange-500 focus:text-orange-500 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:p-0 dark:text-white md:dark:hover:text-orange-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent focus:outline-none">
-                Expertise
-              </a>
-            </li>
+
+        <div className="hidden md:flex w-full md:w-auto" id="navbar-default">
+          <ul className="flex flex-col md:flex-row space-x-0 md:space-x-8 p-4 md:p-0 mt-4 md:mt-0 border-gray-100 rounded-lg text-white dark:bg-gray-800 md:dark:bg-transparent">
+            <li><a href="#" className="py-2 px-3 rounded hover:text-orange-500">Dashboard</a></li>
+            <li><a href="#" className="py-2 px-3 rounded hover:text-orange-500">Projects</a></li>
+            <li><a href="#" className="py-2 px-3 rounded hover:text-orange-500">Commands</a></li>
+            <li><a href="#" className="py-2 px-3 rounded hover:text-orange-500">Sprints</a></li>
+            <li><a href="#" className="py-2 px-3 rounded hover:text-orange-500">Mapping</a></li>
+            <li><a href="#" className="py-2 px-3 rounded hover:text-orange-500">Operators</a></li>
+            <li><a href="#" className="py-2 px-3 rounded hover:text-orange-500">Expertise</a></li>
           </ul>
         </div>
-        <a className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img
-            className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            alt=""
-          />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-            {" >"}
-          </span>
-        </a>
+        <div className="flex items-center space-x-3">
+          <button className="text-white hover:bg-gray-700 p-2 rounded-full">
+            <NotificationsIcon />
+          </button>
+          <button className="text-white hover:bg-gray-700 p-2 rounded-full">
+            <SettingsIcon />
+          </button>
+          <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt="User avatar" />
+          </a>
+        </div>
       </div>
     </nav>
   );

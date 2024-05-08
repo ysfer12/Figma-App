@@ -1,50 +1,73 @@
 import React from "react";
 
-interface TableNavbarProps {
-    // youssef you can define props here if needed
-}
+const SearchIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+);
 
-const TableNavbar: React.FC<TableNavbarProps> = () => {
+const FilterIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L12 14.414V20a1 1 0 01-1.707.707L7 18.414V6H3V4z" />
+    </svg>
+);
+
+const RefreshIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h5M20 20v-5h-5M5.293 7.293l1.414 1.414A6.5 6.5 0 1112 19.5a6.5 6.5 0 01-6.5-6.5h3M19 10a6.5 6.5 0 100 5h3" />
+    </svg>
+);
+
+const TableNavbar: React.FC = () => {
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900">
-            <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4 px-10">
-                <a
-                    href="https://flowbite.com/"
-                    className="flex items-center space-x-3 rtl:space-x-reverse"
-                >
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                        Projects
-                    </span>
-                </a>
+            <div className="max-w-screen-2xl flex items-center justify-between mx-auto p-4 px-10">
 
-                <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-                    <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                {/* Left Section with smaller font for "Projects" */}
+                <div className="flex items-center">
+                    <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                            Projects
+                        </span>
+                    </a>
+                </div>
+
+                {/* Center Section for List/Grid View */}
+                <div className="flex-grow flex items-center justify-center">
+                    <ul className="flex space-x-4 rtl:space-x-reverse">
                         <li>
-                            <a
-                                href="#"
-                                className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                                aria-current="page"
-                            >
+                            <a href="#" className="text-blue-700 hover:text-blue-800 dark:text-white dark:hover:text-gray-200">
                                 List View
                             </a>
                         </li>
                         <li>
-                            <a
-                                href="#"
-                                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                            >
+                            <span className="text-gray-400">|</span>
+                        </li>
+                        <li>
+                            <a href="#" className="text-blue-700 hover:text-blue-800 dark:text-white dark:hover:text-gray-200">
                                 Grid View
                             </a>
                         </li>
                     </ul>
                 </div>
 
-                {/* Button component */}
-                <button className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                        + Add Project
-                    </span>
-                </button>
+                {/* Right Section for Icons and Button with smaller font for "+ ADD NEW PROJECT" */}
+                <div className="flex items-center">
+                    <button className="p-2 rounded-md hover:bg-gray-200">
+                        <SearchIcon />
+                    </button>
+                    <button className="p-2 rounded-md hover:bg-gray-200">
+                        <FilterIcon />
+                    </button>
+                    <button className="p-2 rounded-md hover:bg-gray-200">
+                        <RefreshIcon />
+                    </button>
+                    <button className="ml-3 bg-blue-500 border-2 border-transparent text-white hover:bg-blue-700 hover:border-blue-900 py-2 px-4 rounded-md transition duration-150 ease-in-out">
+                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                            + ADD NEW PROJECT
+                        </span>
+                    </button>
+                </div>
 
             </div>
         </nav>
